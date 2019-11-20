@@ -1,12 +1,13 @@
 import os
 
-print("\nPara administrar o sistema esolha uma das opções abaixo: \n")
-print("Opção 1: Visualizar informações do sistema")
-print("Opção 2: Visualizar uso o disco")
-print("Opção 3: Fazer ping")
-print("Opção 4: Sair do sistema")
 
-resposta = input("O que você deseja fazer: ")
+def inicio():
+    print("\nPara administrar o sistema esolha uma das opções abaixo: \n")
+    print("Opção 1: Visualizar informações do sistema")
+    print("Opção 2: Visualizar uso o disco")
+    print("Opção 3: Fazer ping")
+    print("Opção 4: Sair do sistema")
+    return input("O que você deseja fazer: ")
 
 
 def opcao1():
@@ -28,26 +29,7 @@ def opcao4():
     return os.system("exit")
 
 
-if resposta == "1":
-    opcao1()
-elif resposta == "2":
-    opcao2()
-elif resposta == "3":
-    opcao3()
-elif resposta == "4":
-    opcao4()
-else:
-    print("\nDigite uma opção válida")
-
-while resposta:
-    print("\nPara administrar o sistema esolha uma das opções abaixo: \n")
-    print("Opção 1: Visualizar informações do sistema")
-    print("Opção 2: Visualizar uso o disco")
-    print("Opção 3: Fazer ping")
-    print("Opção 4: Sair do sistema")
-
-    resposta = input("O que você deseja fazer: ")
-
+def opcoes():
     if resposta == "1":
         opcao1()
     elif resposta == "2":
@@ -58,3 +40,12 @@ while resposta:
         opcao4()
     else:
         print("\nDigite uma opção válida")
+
+
+resposta = inicio()
+opcoes()
+
+
+while resposta:
+    resposta = inicio()
+    opcoes()
