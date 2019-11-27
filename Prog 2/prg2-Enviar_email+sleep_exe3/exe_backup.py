@@ -53,8 +53,11 @@ def verificarEmail():
     mail.login('joaosilvapires3@gmail.com', 'SenhaGmail_5@')
     mail.list()
     mail.select("inbox")
-    resultado = mail.uid('search', None, '(HEADER Subject "Backup efetuado com sucesso")')
-    return resultado
+    execucao = mail.uid('search', None, '(HEADER Subject "Backup efetuado com sucesso")')
+    if execucao[1] == [b'']:
+        return False
+    else:
+        return True
 
 
 enviado = False
