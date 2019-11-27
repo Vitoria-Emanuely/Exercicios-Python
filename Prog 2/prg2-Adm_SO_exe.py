@@ -2,12 +2,12 @@ import os
 
 
 def inicio():
-    print("\nPara administrar o sistema esolha uma das opções abaixo: \n")
+    print("\nPara administrar o sistema escolha uma das opções abaixo: \n")
     print("Opção 1: Visualizar informações do sistema")
-    print("Opção 2: Visualizar uso o disco")
+    print("Opção 2: Visualizar uso de disco")
     print("Opção 3: Fazer ping")
     print("Opção 4: Sair do sistema")
-    return input("O que você deseja fazer: ")
+    return input("Digite o que deseja fazer: ")
 
 
 def opcao1():
