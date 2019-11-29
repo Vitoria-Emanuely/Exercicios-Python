@@ -6,10 +6,11 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import imaplib
 
+
 def enviarEmail():
-    sender_email = "joaosilvapires3@gmail.com"
-    receiver_email = "joaosilvapires3@gmail.com"
-    password = "SenhaGmail_5@"
+    sender_email = " "
+    receiver_email = " "
+    password = " "
 
     message = MIMEMultipart("alternative")
     message["Subject"] = "Backup efetuado com sucesso"
@@ -50,7 +51,7 @@ def enviarEmail():
 
 def verificarEmail():
     mail = imaplib.IMAP4_SSL('imap.gmail.com')
-    mail.login('joaosilvapires3@gmail.com', 'SenhaGmail_5@')
+    mail.login(' ', ' ')
     mail.list()
     mail.select("inbox")
     execucao = mail.uid('search', None, '(HEADER Subject "Backup efetuado com sucesso")')
@@ -62,15 +63,16 @@ def verificarEmail():
 
 enviado = False
 
+
 while enviado is False:
     arquivo = open('arquivo.txt', encoding='UTF-8').read().splitlines()
     for linha in arquivo:
         if linha == "backup efetuado com sucesso":
-            enviarEmail()
             atual = datetime.date.today()
             amanha = datetime.date.today() + datetime.timedelta(days=1)
             while verificarEmail():
-                if amanha >= atual:
+                if amanha == atual:
+                    enviarEmail()
+                elif amanha >= atual:
                     break
     time.sleep(300)
-
