@@ -9,7 +9,7 @@ from email.mime.multipart import MIMEMultipart
 
 def verificarEmail():
     mail = imaplib.IMAP4_SSL('imap.gmail.com')
-    mail.login('joaosilvapires3@gmail.com', 'SenhaGmail_5@')
+    mail.login(' ', ' ')
     mail.list()
     mail.select("inbox")
     execucao = mail.uid('search', None, '(HEADER Subject "Execute comando aula")')
@@ -20,8 +20,8 @@ def verificarEmail():
 
 
 def enviarEmail(string):
-    sender_email = "joaosilvapires3@gmail.com"
-    receiver_email = "joaosilvapires3@gmail.com"
+    sender_email = " "
+    receiver_email = " "
     password = "SenhaGmail_5@"
 
     message = MIMEMultipart("alternative")
